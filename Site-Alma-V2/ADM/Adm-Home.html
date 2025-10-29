@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Adm-home.css">
+    <title>Dashboard Administrador</title>
+</head>
+<body>
+    <div class="header">
+        <a href="../index.html" class="home-icon" title="Ir para Home">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+        </a>
+    </div>
+
+    <div class="container">
+        <h1 class="welcome-text">Bem-Vindo Administrador</h1>
+
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-title">Total de Voluntários</div>
+                <div class="card-value" id="totalVoluntarios"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Valor Total Doado</div>
+                <div class="card-value" id="valorTotal"></div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">Total de Doadores</div>
+                <div class="card-value" id="totalDoadores"></div>
+            </div>
+        </div>
+
+        <a href="index.html" class="edit-button">Editar Transparência</a>
+    </div>
+
+    <script>
+        const data = {
+            totalVoluntarios: 125,
+            valorTotal: 20195.15,
+            totalDoadores: 60
+        };
+
+        function carregarDados() {
+            document.getElementById('totalVoluntarios').textContent = data.totalVoluntarios;
+            document.getElementById('totalDoadores').textContent = data.totalDoadores;
+
+            const valorFormatado = data.valorTotal.toLocaleString('pt-BR', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+
+            document.getElementById('valorTotal').innerHTML = `<span class="moeda">R$</span> ${valorFormatado}`;
+        }
+
+        // Ajusta o tamanho da fonte dinamicamente
+        function ajustarTamanhoTexto() {
+            const cards = document.querySelectorAll('.card-value');
+            cards.forEach(card => {
+                const largura = card.offsetWidth;
+
+                if (largura < 180) {
+                    card.style.fontSize = '22px';
+                } else if (largura < 220) {
+                    card.style.fontSize = '28px';
+                } else {
+                    card.style.fontSize = '36px';
+                }
+            });
+        }
+
+        window.addEventListener('load', () => {
+            carregarDados();
+            ajustarTamanhoTexto();
+        });
+
+        window.addEventListener('resize', ajustarTamanhoTexto);
+    </script>
+</body>
+</html>

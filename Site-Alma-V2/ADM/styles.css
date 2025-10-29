@@ -11,6 +11,37 @@ body {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%);
 }
 
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 15px 25px;
+}
+
+.home-icon {
+  width: 35px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.home-icon:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.home-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
 /* CONTAINER PRINCIPAL DOS CARDS */
 .editable-cards-container {
     display: flex;
