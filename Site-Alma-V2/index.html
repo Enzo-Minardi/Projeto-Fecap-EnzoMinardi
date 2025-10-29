@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Organização social focada em transformação comunitária e construção de esperança através de projetos que geram impacto real.">
+    <meta name="keywords" content="ONG, transformação social, projetos sociais, voluntariado, doações, comunidade">
+    <title>Transformando - Construindo Esperança Transformando Vidas</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Transformando - Construindo Esperança e Transformando Vidas">
+    <meta property="og:description"
+        content="Organização social focada em transformação comunitária através de projetos que geram impacto real.">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Transformando - Construindo Esperança">
+    <meta property="twitter:description" content="Transformando vidas através de ações concretas na comunidade.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./IMG/Logo Instituto Alma.png">
+
+    <link rel="stylesheet" href="./CSS/styles.css">
+
+</head>
+
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading">
+        <div class="loading-heart">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    fill="url(#heart-gradient)" />
+                <defs>
+                    <linearGradient id="heart-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#3B82F6" />
+                        <stop offset="50%" style="stop-color:#06B6D4" />
+                        <stop offset="100%" style="stop-color:#10B981" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-Alma">
+                        <img src="./IMG/LOGO_V.3_ALMA.png">
+                    </div>
+                </div>
+
+                <nav class="nav-desktop">
+                    <a href="#sobre" class="nav-link">Sobre</a>
+                    <a href="#projetos" class="nav-link">Projetos</a>
+                    <a href="#impacto" class="nav-link">Impacto</a>
+                    <a href="#transparencia" class="nav-link">Transparência</a>
+                    <a href="#contato" class="nav-link">Contato</a>
+                    <a href="./LOGIN-CADASTRO/index.html" class="nav-link">Entrar</a>
+                    <a href="#doe" class="nav-link-doar">DOAR</a>
+                </nav>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i data-lucide="menu" id="menuIcon"></i>
+                    <i data-lucide="x" id="closeIcon" style="display: none;"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="#sobre" class="mobile-nav-link">Sobre</a>
+                <a href="#projetos" class="mobile-nav-link">Projetos</a>
+                <a href="#impacto" class="mobile-nav-link">Impacto</a>
+                <a href="#transparencia" class="mobile-nav-link">Transparência</a>
+                <a href="#contato" class="mobile-nav-link">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-pattern"></div>
+
+        <!-- Adicione esta nova div -->
+        <div class="hero-image">
+            <img src="./IMG/Grupo__ALMA__em_Harmonia-removebg-preview (2).png" alt="Grupo ALMA em Harmonia">
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+
+                <h1 class="hero-title">
+                    Transformando Vidas
+                </h1>
+
+                <!-- <h1 class="hero-title">
+                    E
+                </h1> -->
+
+                <h1 class="hero-title">
+                    Construindo Esperança
+                </h1>
+
+
+
+                <p class="hero-description">
+                    Juntos, criamos oportunidades que geram impacto real na vida das pessoas e transformam comunidades
+                    inteiras.
+                </p>
+
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('sobre')">
+                        <span>Conhecer Nossa História</span>
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+
+                    <button class="btn btn-secondary" onclick="scrollToSection('projetos')">
+                        <i data-lucide="play"></i>
+                        <span>Ver Projetos</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-indicator-inner">
+                <div class="scroll-indicator-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Sobre Nossa <span class="text-blue">Missão</span>
+                </h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 class="about-subtitle">
+                        Acreditamos que cada pessoa tem o potencial de transformar sua realidade
+                    </h3>
+
+                    <p class="about-paragraph">
+                        Nossa organização nasceu da necessidade de criar pontes entre pessoas que querem ajudar
+                        e comunidades que precisam de apoio. Trabalhamos com projetos que geram impacto real e
+                        duradouro na vida das pessoas.
+                    </p>
+
+                    <p class="about-paragraph">
+                        Através de uma abordagem humanizada e transparente, desenvolvemos iniciativas que vão
+                        desde a capacitação profissional até o apoio básico para famílias em situação de
+                        vulnerabilidade.
+                    </p>
+
+                    <div class="quote-box">
+                        <p class="quote-text">
+                            "Nossa missão é criar oportunidades que transformem não apenas vidas individuais,
+                            mas comunidades inteiras, construindo um futuro mais justo e esperançoso para todos."
+                        </p>
+                        <p class="quote-author">— Fundadores da Organização</p>
+                    </div>
+                </div>
+
+                <div class="about-visual">
+                    <div class="values-card">
+                        <img src="https://images.pexels.com/photos/6646917/pexels-photo-6646917.jpeg?auto=compress&cs=tinysrgb&w=600"
+                            alt="Pessoas trabalhando juntas" class="values-image">
+                        <h4 class="values-title">Nossos Valores</h4>
+                        <ul class="values-list">
+                            <li class="values-item">
+                                <i data-lucide="heart"></i>
+                                <span>Transparência em todas as ações</span>
+                            </li>
+                            <li class="values-item">
+                                <i data-lucide="heart"></i>
+                                <span>Respeito à dignidade humana</span>
+                            </li>
+                            <li class="values-item">
+                                <i data-lucide="heart"></i>
+                                <span>Sustentabilidade dos projetos</span>
+                            </li>
+                            <li class="values-item">
+                                <i data-lucide="heart"></i>
+                                <span>Inclusão e diversidade</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">Vidas Impactadas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i data-lucide="target"></i>
+                    </div>
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Projetos Realizados</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i data-lucide="award"></i>
+                    </div>
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Anos de Experiência</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i data-lucide="heart"></i>
+                    </div>
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Amor pelo que Fazemos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projetos" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Nossos <span class="text-teal">Projetos</span>
+                </h2>
+                <div class="section-divider teal"></div>
+                <p class="section-description">
+                    Conheça as iniciativas que estão transformando vidas e construindo um futuro melhor para nossa
+                    comunidade
+                </p>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impacto" class="impact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Nosso <span class="text-orange">Impacto</span>
+                </h2>
+                <div class="section-divider orange"></div>
+                <p class="section-description">
+                    Números que contam histórias reais de transformação e esperança
+                </p>
+            </div>
+
+            <!-- Impact Numbers -->
+            <div class="impact-numbers">
+                <div class="impact-item">
+                    <div class="impact-icon orange">
+                        <i data-lucide="trending-up"></i>
+                    </div>
+                    <div class="impact-number">5.284</div>
+                    <div class="impact-label">Vidas Transformadas</div>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon orange">
+                        <i data-lucide="map-pin"></i>
+                    </div>
+                    <div class="impact-number">15</div>
+                    <div class="impact-label">Comunidades Atendidas</div>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon orange">
+                        <i data-lucide="clock"></i>
+                    </div>
+                    <div class="impact-number">24/7</div>
+                    <div class="impact-label">Suporte Disponível</div>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon orange">
+                        <i data-lucide="star"></i>
+                    </div>
+                    <div class="impact-number">4.9</div>
+                    <div class="impact-label">Avaliação dos Beneficiários</div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="testimonials-section">
+                <h3 class="testimonials-title">Histórias de Transformação</h3>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=150"
+                                alt="Maria Silva" class="testimonial-avatar">
+                            <div class="testimonial-info">
+                                <h4 class="testimonial-name">Maria Silva</h4>
+                                <p class="testimonial-role">Participante do Programa de Capacitação</p>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-stars">
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                        </div>
+
+                        <p class="testimonial-content">
+                            "Graças aos cursos oferecidos, consegui uma oportunidade de trabalho que mudou completamente
+                            minha vida e da minha família."
+                        </p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=150"
+                                alt="João Santos" class="testimonial-avatar">
+                            <div class="testimonial-info">
+                                <h4 class="testimonial-name">João Santos</h4>
+                                <p class="testimonial-role">Beneficiário do Projeto Alimentação</p>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-stars">
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                        </div>
+
+                        <p class="testimonial-content">
+                            "Em momentos difíceis, vocês foram nossa luz. O apoio recebido nos deu forças para seguir em
+                            frente."
+                        </p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <img src="https://images.pexels.com/photos/3785081/pexels-photo-3785081.jpeg?auto=compress&cs=tinysrgb&w=150"
+                                alt="Ana Costa" class="testimonial-avatar">
+                            <div class="testimonial-info">
+                                <h4 class="testimonial-name">Ana Costa</h4>
+                                <p class="testimonial-role">Voluntária há 3 anos</p>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-stars">
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                            <i data-lucide="star" class="star-filled"></i>
+                        </div>
+
+                        <p class="testimonial-content">
+                            "Participar desta organização me ensinou o verdadeiro significado de fazer a diferença na
+                            vida das pessoas."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div id="doe" class="cta-section">
+                <h3 class="cta-title">Faça Parte Desta Transformação</h3>
+                <p class="cta-description">
+                    Sua contribuição, seja como voluntário ou doador, multiplica nosso impacto na comunidade
+                </p>
+                <div class="cta-buttons">
+                    <button class="btn btn-white">Seja Voluntário</button>
+                    <button class="btn btn-outline-white">Fazer Doação</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transparency Section -->
+    <section id="transparencia" class="transparency">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title white">
+                    <span class="text-blue-light">Transparência</span> & Prestação de Contas
+                </h2>
+                <div class="section-divider blue-light"></div>
+                <p class="section-description white">
+                    A confiança é a base do nosso trabalho. Por isso, mantemos total transparência em todas as nossas
+                    ações.
+                </p>
+            </div>
+
+            <div class="transparency-content">
+                <!-- Principles -->
+                <div class="principles-section">
+                    <h3 class="principles-title">Nossos Princípios</h3>
+                    <div class="principles-grid">
+                        <div class="principle-card">
+                            <div class="principle-icon">
+                                <i data-lucide="eye"></i>
+                            </div>
+                            <div class="principle-content">
+                                <h4 class="principle-title">Transparência Total</h4>
+                                <p class="principle-description">
+                                    Todos os nossos relatórios financeiros e de atividades são públicos e auditados por
+                                    terceiros.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="principle-card">
+                            <div class="principle-icon">
+                                <i data-lucide="shield"></i>
+                            </div>
+                            <div class="principle-content">
+                                <h4 class="principle-title">Prestação de Contas</h4>
+                                <p class="principle-description">
+                                    Publicamos relatórios trimestrais detalhando como cada real doado foi utilizado.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="principle-card">
+                            <div class="principle-icon">
+                                <i data-lucide="file-text"></i>
+                            </div>
+                            <div class="principle-content">
+                                <h4 class="principle-title">Documentação Completa</h4>
+                                <p class="principle-description">
+                                    Mantemos registro detalhado de todas as atividades e beneficiários atendidos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Documents -->
+                <div class="documents-section">
+                    <h3 class="documents-title">Documentos Públicos</h3>
+                    <div class="documents-grid">
+                        <div class="document-card">
+                            <div class="document-info">
+                                <div class="document-icon">
+                                    <i data-lucide="file-text"></i>
+                                </div>
+                                <div class="document-details">
+                                    <h4 class="document-title">Relatório Anual 2025</h4>
+                                    <p class="document-description">Demonstrações financeiras e atividades realizadas
+                                    </p>
+                                    <div class="document-meta">
+                                        <span class="document-type">PDF</span>
+                                        <span class="document-size">2.4 MB</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="./PDF/Enzo Nunes Zambon Minardi dy Azevedo (2) (1).pdf" download>
+                                <button class="document-download">
+                                    <i data-lucide="download"></i>
+                                </button>
+                            </a>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-info">
+                                <div class="document-icon">
+                                    <i data-lucide="file-text"></i>
+                                </div>
+                                <div class="document-details">
+                                    <h4 class="document-title">Balanço Financeiro</h4>
+                                    <p class="document-description">Receitas e despesas do último trimestre</p>
+                                    <div class="document-meta">
+                                        <span class="document-type">PDF</span>
+                                        <span class="document-size">1.8 MB</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="document-download">
+                                <i data-lucide="download"></i>
+                            </button>
+                        </div>
+
+                        <div class="document-card">
+                            <div class="document-info">
+                                <div class="document-icon">
+                                    <i data-lucide="shield"></i>
+                                </div>
+                                <div class="document-details">
+                                    <h4 class="document-title">Certificado de Utilidade Pública</h4>
+                                    <p class="document-description">Documentação oficial da organização</p>
+                                    <div class="document-meta">
+                                        <span class="document-type">PDF</span>
+                                        <span class="document-size">892 KB</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="document-download">
+                                <i data-lucide="download"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="audit-info">
+                        <h4 class="audit-title">Auditoria Externa</h4>
+                        <p class="audit-description">
+                            Nossos demonstrativos financeiros são auditados anualmente por empresa de auditoria
+                            independente,
+                            garantindo a veracidade e transparência de nossas informações.
+                        </p>
+                        <p class="audit-status">
+                            Última auditoria: Dezembro 2025 - Aprovada sem ressalvas
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Summary -->
+            <div class="financial-summary">
+                <h3 class="financial-title">Resumo Financeiro 2025</h3>
+
+                <div class="financial-grid">
+                    <div class="financial-item">
+                        <div class="financial-amount green">R$ 2.847.000</div>
+                        <div class="financial-label">Total Arrecadado</div>
+                        <div class="financial-sublabel">Doações + Parcerias</div>
+                    </div>
+
+                    <div class="financial-item">
+                        <div class="financial-amount blue">R$ 2.633.000</div>
+                        <div class="financial-label">Investido em Projetos</div>
+                        <div class="financial-sublabel">92.5% do total arrecadado</div>
+                    </div>
+
+                    <div class="financial-item">
+                        <div class="financial-amount orange">R$ 214.000</div>
+                        <div class="financial-label">Custos Administrativos</div>
+                        <div class="financial-sublabel">7.5% do total arrecadado</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    Entre em <span class="text-teal">Contato</span>
+                </h2>
+                <div class="section-divider teal"></div>
+                <p class="section-description">
+                    Sua voz é importante para nós. Entre em contato e ajude-nos a fazer a diferença
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3 class="contact-info-title">Como nos encontrar</h3>
+                    <div class="contact-items">
+                        <a href="mailto:contato@transformando.org.br" class="contact-item">
+                            <div class="contact-icon">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4 class="contact-title">E-mail</h4>
+                                <p class="contact-text">contato@transformando.org.br</p>
+                            </div>
+                        </a>
+
+                        <a href="tel:+551183261445" class="contact-item">
+                            <div class="contact-icon">
+                                <i data-lucide="phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4 class="contact-title">Telefone</h4>
+                                <p class="contact-text">(11) 8326-1445</p>
+                            </div>
+                        </a>
+
+                        <a href="https://maps.google.com" class="contact-item">
+                            <div class="contact-icon">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4 class="contact-title">Endereço</h4>
+                                <p class="contact-text">Av. Gustavo Adolfo, 1856 - Vila Gustavo, São Paulo - SP</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="schedule-card">
+                        <h4 class="schedule-title">Horário de Atendimento</h4>
+                        <div class="schedule-items">
+                            <p>Segunda a Sexta: 8h às 18h</p>
+                            <p>Sábados: 8h às 12h</p>
+                            <p>Domingos: Plantão de emergência</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <form class="contact-form" id="contactForm">
+                        <h3 class="form-title">Envie sua mensagem</h3>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nome" class="form-label">Nome completo *</label>
+                                <input type="text" id="nome" name="nome" class="form-input" placeholder="Seu nome"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">E-mail *</label>
+                                <input type="email" id="email" name="email" class="form-input"
+                                    placeholder="seu@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="telefone" class="form-label">Telefone *</label>
+                                <input type="tel" id="telefone" name="telefone" class="form-input"
+                                    placeholder="(11) 99999-9999">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="assunto" class="form-label">Assunto *</label>
+                                <select id="assunto" name="assunto" class="form-input" required>
+                                    <option value="">Selecione um assunto</option>
+                                    <option value="voluntario">Quero ser voluntário</option>
+                                    <option value="doacao">Quero fazer uma doação</option>
+                                    <option value="parceria">Proposta de parceria</option>
+                                    <option value="informacoes">Solicitar informações</option>
+                                    <option value="outro">Outro assunto</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensagem" class="form-label">Mensagem *</label>
+                            <textarea id="mensagem" name="mensagem" class="form-textarea" rows="6"
+                                placeholder="Escreva sua mensagem aqui..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="form-submit">
+                            <i data-lucide="send"></i>
+                            <span>Enviar Mensagem</span>
+                        </button>
+                    </form>
+                </div>
+
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo and Description -->
+                <div class="footer-main">
+                    <div class="footer-logo">
+                        <div class="logo">
+                            <div class="logo-Alma">
+                                <img src="./IMG/LOGO_V.8_ALMA.png">
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="footer-description">
+                        Construindo pontes de esperança e transformando vidas através de ações concretas
+                        que geram impacto real em nossa comunidade.
+                    </p>
+
+                    <div class="footer-contact">
+                        <div class="footer-contact-item">
+                            <i data-lucide="mail"></i>
+                            <span>contato@transformando.org.br</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i data-lucide="phone"></i>
+                            <span>(11) 8326-1445</span>
+                        </div>
+                        <div class="footer-contact-item">
+                            <i data-lucide="map-pin"></i>
+                            <span>Av. Gustavo Adolfo, 1856 - Vila Gustavo, São Paulo - SP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4 class="footer-section-title">Links Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#sobre" class="footer-link">Sobre</a></li>
+                        <li><a href="#projetos" class="footer-link">Projetos</a></li>
+                        <li><a href="#transparencia" class="footer-link">Transparência</a></li>
+                        <li><a href="#contato" class="footer-link">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="footer-section-2">
+                    <h4 class="footer-section-2-title">Como Ajudar</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Seja Voluntário</a></li>
+                        <li><a href="#" class="footer-link">Faça uma Doação</a></li>
+                        <li><a href="#" class="footer-link">Parcerias</a></li>
+                        <li><a href="#" class="footer-link">Divulgue Nosso Trabalho</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Social Media and Minardi -->
+            <div class="footer-social-section">
+                <div class="social-media">
+                    <h4 class="social-title">Siga-nos nas Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/almainstituto.oficial/" class="social-link"
+                            aria-label="Facebook">
+                            <i data-lucide="facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/almainstituto_oficial/" class="social-link"
+                            aria-label="Instagram">
+                            <i data-lucide="instagram"></i>
+                        </a>
+                        <!-- <a href="#" class="social-link" aria-label="Twitter">
+                            <i data-lucide="twitter"></i>
+                        </a> -->
+                        <a href="https://www.instagram.com/enzominardi._/" class="social-link" aria-label="Youtube">
+                            <i data-lucide="youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="newsletter">
+                    <h4 class="newsletter-title">Instituto Alma</h4>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required>
+                        <button type="submit" class="newsletter-submit">Inscrever</button>
+                    </form>
+                    <p class="newsletter-description">
+                        Receba novidades sobre nossos projetos e ações
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">
+                        © 2024 Transformando. Todos os direitos reservados.
+                    </p>
+
+                    <div class="footer-legal">
+                        <a href="#" class="legal-link">Política de Privacidade</a>
+                        <a href="#" class="legal-link">Termos de Uso</a>
+                        <a href="#" class="legal-link">Cookies</a>
+                    </div>
+                </div>
+
+                <div class="footer-love">
+                    <p class="love-text">
+                        Desenvolvido com <i data-lucide="heart" class="love-icon"></i>
+                        para fazer a diferença no mundo
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-overlay" onclick="closeProjectModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeProjectModal()">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be loaded by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage">
+        <div class="success-content">
+            <i data-lucide="check-circle" class="success-icon"></i>
+            <h3 class="success-title">Mensagem Enviada!</h3>
+            <p class="success-text">Obrigado por entrar em contato. Responderemos em breve!</p>
+        </div>
+    </div>
+
+    <script src="./JS/script.js"></script>
+</body>
+
+</html>

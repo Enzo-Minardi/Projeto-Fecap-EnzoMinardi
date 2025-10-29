@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login / Cadastro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" id="container">
+    <!-- Formulário de Cadastro -->
+    <div class="form-container sign-up-container">
+      <form id="signupForm">
+        <h1>Criar Conta</h1>
+        <span>Use seu e-mail para registrar:</span>
+        <input type="text" id="signupName" placeholder="Nome" required />
+        <input type="email" id="signupEmail" placeholder="E-mail" required />
+        <input type="password" id="signupPassword" placeholder="Senha" required />
+        <button type="submit">Cadastrar</button>
+        <p id="signupResponse" class="response"></p>
+      </form>
+    </div>
+
+    <!-- Formulário de Login -->
+    <div class="form-container sign-in-container">
+      <form id="signinForm">
+        <h1>Entrar</h1>
+        <span>Use sua conta</span>
+        <input type="email" id="signinEmail" placeholder="E-mail" required />
+        <input type="password" id="signinPassword" placeholder="Senha" required />
+        <br>
+        <a href="#">Esqueceu sua senha?</a>
+        <br><br>
+        <button type="submit">Entrar</button>
+        <p id="signinResponse" class="response"></p>
+      </form>
+    </div>
+
+    <!-- Painel de Sobreposição -->
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Bem-Vindo De Volta!</h1>
+          <p>Para continuar conectado conosco faça login com suas informações pessoais</p>
+          <button class="ghost" id="signIn">Entrar</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Olá, Amigo!</h1>
+          <p>Insira seus dados pessoais e comece sua jornada conosco</p>
+          <button class="ghost" id="signUp">Cadastrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Alternar entre login e cadastro (painel de sobreposição)
+    const container = document.getElementById('container');
+    document.getElementById('signUp').addEventListener('click', () => {
+      container.classList.add("right-panel-active");
+    });
+    document.getElementById('signIn').addEventListener('click', () => {
+      container.classList.remove("right-panel-active");
+    });
+
+    // Cadastro
+    const signupForm = document.getElementById('signupForm');
+    const signupResponse = document.getElementById('signupResponse');
+    signupForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = {
+        nome: document.getElementById('signupName').value,
+        email: document.getElementById('signupEmail').value,
+        senha: document.getElementById('signupPassword').value
+      };
+      try {
+        const res = await fetch('/auth/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const json = await res.json();
+        signupResponse.innerText = json.message || JSON.stringify(json);
+        signupResponse.style.color = res.ok ? 'green' : 'red';
+      } catch (err) {
+        signupResponse.innerText = 'Erro: ' + err.message;
+        signupResponse.style.color = 'red';
+      }
+    });
+
+    // Login
+    const signinForm = document.getElementById('signinForm');
+    const signinResponse = document.getElementById('signinResponse');
+    signinForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = {
+        email: document.getElementById('signinEmail').value,
+        senha: document.getElementById('signinPassword').value
+      };
+      try {
+        const res = await fetch('/auth/signin', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const json = await res.json();
+        signinResponse.innerText = json.message || JSON.stringify(json);
+        signinResponse.style.color = res.ok ? 'green' : 'red';
+      } catch (err) {
+        signinResponse.innerText = 'Erro: ' + err.message;
+        signinResponse.style.color = 'red';
+      }
+    });
+  </script>
+</body>
+</html>

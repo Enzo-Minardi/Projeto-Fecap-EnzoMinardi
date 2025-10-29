@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="DOEEE.css">
+    <title>Doe Agora</title>
+
+</head>
+<body>
+    <div class="header">
+        <a href="../index.html" class="home-icon" title="Ir para Home">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+        </a>
+    </div>
+
+    <div class="container">
+        <h1>Você tem o poder da mudança. Doe agora e salve vidas.</h1>
+        
+        <form id="donationForm">
+            <div class="form-content">
+                <div class="left-column">
+                    <div class="form-group">
+                        <label>Nome Completo<span class="required">*</span></label>
+                        <input type="text" name="nome" placeholder="Nome" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Telefone<span class="required">*</span></label>
+                        <input type="tel" name="telefone" placeholder="(11) 99999-9999" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Data de Nascimento<span class="required">*</span></label>
+                        <input type="text" name="nascimento" placeholder="dd/mm/aaaa" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email<span class="required">*</span></label>
+                        <input type="email" name="email" placeholder="example@gmail.com" required>
+                    </div>
+                </div>
+
+                <div class="right-column">
+                    <p class="donation-text">Insira o valor a<br>ser doado</p>
+                    <input type="text" name="valor" class="amount-input" placeholder="R$ 100,00" required>
+                    <button type="submit" class="submit-btn">DOE AGORA</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Máscara para telefone
+        const telefoneInput = document.querySelector('input[name="telefone"]');
+        telefoneInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length <= 11) {
+                value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+                value = value.replace(/(\d)(\d{4})$/, '$1-$2');
+            }
+            
+            e.target.value = value;
+        });
+
+        // Máscara para data de nascimento
+        const nascimentoInput = document.querySelector('input[name="nascimento"]');
+        nascimentoInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length <= 8) {
+                value = value.replace(/^(\d{2})(\d)/, '$1/$2');
+                value = value.replace(/^(\d{2})\/(\d{2})(\d)/, '$1/$2/$3');
+            }
+            
+            e.target.value = value;
+        });
+
+        // Máscara para valor em reais
+        const valorInput = document.querySelector('input[name="valor"]');
+        valorInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length > 0) {
+                value = (parseInt(value) / 100).toFixed(2);
+                value = 'R$ ' + value.replace('.', ',');
+            }
+            
+            e.target.value = value;
+        });
+
+        // Limitar telefone a 15 caracteres
+        telefoneInput.addEventListener('keypress', function(e) {
+            if (this.value.length >= 15 && e.key !== 'Backspace') {
+                e.preventDefault();
+            }
+        });
+
+        // Limitar data a 10 caracteres
+        nascimentoInput.addEventListener('keypress', function(e) {
+            if (this.value.length >= 10 && e.key !== 'Backspace') {
+                e.preventDefault();
+            }
+        });
+
+        // Submit do formulário
+        document.getElementById('donationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const valor = document.querySelector('input[name="valor"]').value;
+            alert('Obrigado pela sua doação de ' + valor + '!');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="voluntario.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seja um Voluntário</title>
+</head>
+<body>
+    <a href="../index.html" class="home-icon" title="Voltar para Home">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 3L4 9v12h5v-7h6v7h5V9l-8-6z"/>
+        </svg>
+    </a>
+
+    <div class="container">
+        <h1>Seja um Voluntário de nosso Instituto</h1>
+        
+        <form id="volunteerForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Nome Completo<span class="required">*</span></label>
+                    <input type="text" name="nome" placeholder="Nome" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Data de Nascimento<span class="required">*</span></label>
+                    <input type="text" name="nascimento" placeholder="dd/mm/aaaa" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Telefone<span class="required">*</span></label>
+                    <input type="tel" name="telefone" placeholder="(11) 00000-0000" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Email<span class="required">*</span></label>
+                    <input type="email" name="email" placeholder="example@gmail.com" required>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Seja Voluntário</button>
+        </form>
+    </div>
+
+    <script>
+        // Máscara para telefone
+        const telefoneInput = document.querySelector('input[name="telefone"]');
+        telefoneInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length <= 11) {
+                value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+                value = value.replace(/(\d)(\d{4})$/, '$1-$2');
+            }
+            
+            e.target.value = value;
+        });
+
+        // Máscara para data de nascimento
+        const nascimentoInput = document.querySelector('input[name="nascimento"]');
+        nascimentoInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length <= 8) {
+                value = value.replace(/^(\d{2})(\d)/, '$1/$2');
+                value = value.replace(/^(\d{2})\/(\d{2})(\d)/, '$1/$2/$3');
+            }
+            
+            e.target.value = value;
+        });
+
+        // Limitar telefone a 15 caracteres
+        telefoneInput.addEventListener('keypress', function(e) {
+            if (this.value.length >= 15 && e.key !== 'Backspace') {
+                e.preventDefault();
+            }
+        });
+
+        // Limitar data a 10 caracteres
+        nascimentoInput.addEventListener('keypress', function(e) {
+            if (this.value.length >= 10 && e.key !== 'Backspace') {
+                e.preventDefault();
+            }
+        });
+
+        // Submit do formulário
+        document.getElementById('volunteerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado por se cadastrar como voluntário!');
+        });
+    </script>
+</body>
+</html>

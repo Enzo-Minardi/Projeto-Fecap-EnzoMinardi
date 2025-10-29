@@ -1,0 +1,139 @@
+/* GERAIS E FUNDO */
+body {
+    background-color: #000; /* Fundo preto */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 50px 0; /* Espaçamento superior e inferior */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente (se necessário) */
+    min-height: 100vh; /* Ocupa a altura total da viewport */
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%);
+}
+
+/* CONTAINER PRINCIPAL DOS CARDS */
+.editable-cards-container {
+    display: flex;
+    gap: 30px; /* Espaçamento entre os cards */
+    padding: 20px;
+}
+
+/* ESTILO DO CARD INDIVIDUAL */
+.editable-card {
+    background-color: #f0f0f0; /* Fundo cinza claro do card */
+    padding: 25px;
+    border-radius: 20px; /* Bordas arredondadas */
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra sutil para destaque */
+    text-align: center;
+}
+
+.editable-card .card-number {
+    font-size: 1.1em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* GRUPO DE INPUTS */
+.input-group {
+    margin-bottom: 25px;
+}
+
+.editable-card input {
+    width: 100%;
+    padding: 8px 0; /* Padding vertical e nenhum horizontal */
+    margin: 0;
+    background: transparent; /* Fundo transparente */
+    border: none;
+    border-bottom: 1px solid #999; /* Linha de baixo */
+    color: #333; /* Cor do texto digitado */
+    font-size: 0.95em;
+    outline: none; /* Remove a borda de foco padrão */
+    text-align: center;
+}
+
+/* Estilo do placeholder para simular o texto de instrução */
+.editable-card input::placeholder {
+    color: #666; /* Cor do texto do placeholder */
+    opacity: 1; /* Garante que a cor seja totalmente aplicada */
+    font-style: italic;
+    text-align: center;
+}
+
+/* BOTÃO ATUALIZAR */
+.btn-atualizar {
+    width: 100%;
+    background-color: #4a77e5; /* Azul mais vibrante para o botão */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn-atualizar:hover {
+    background-color: #3b5aa8;
+}
+/* ======== INPUT DE ARQUIVO (PDF) ======== */
+.file-input-group {
+    position: relative;
+    text-align: center;
+  }
+  
+  /* Centraliza o texto "Nenhum arquivo escolhido" */
+  .pdf-upload-input {
+    width: 100%;
+    text-align: center;
+    font-size: 0.85em;
+    color: #555;
+    cursor: pointer;
+  }
+  
+  /* Remove estilos padrões que empurram o texto */
+  .pdf-upload-input::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  
+  .pdf-upload-input::before {
+    content: "Nenhum arquivo escolhido";
+    display: inline-block;
+    font-size: 0.9em;
+    color: #555;
+  }
+  
+  /* ======== BOTÃO PERSONALIZADO (label) ======== */
+  .custom-file-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4a77e5;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    z-index: 2;
+    white-space: nowrap;
+  }
+  
+  .custom-file-label:hover {
+    background-color: #3b5aa8;
+  }
+  
+  /* Garante que o input continue clicável por cima da label */
+  .pdf-upload-input {
+    position: relative;
+    z-index: 3;
+    opacity: 0; /* torna o input invisível mas clicável */
+    height: 36px;
+    margin-top: 10px;
+  }
